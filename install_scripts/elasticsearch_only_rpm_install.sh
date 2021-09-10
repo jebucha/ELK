@@ -11,7 +11,7 @@ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.18.r
 rpm -ivh elasticsearch-6.8.18.rpm
 
 # backup the yml
-mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.orig
+cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.orig
 
 
 # setup elasticsearch
