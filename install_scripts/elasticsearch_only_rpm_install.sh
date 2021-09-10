@@ -45,6 +45,7 @@ echo -e '60 second delay for services to start'
 sleep 60
 echo -e '60 second delay over'
 
+# quick functionality test (security not yet enabled)
 curl -XGET http://localhost:9200
 
 echo 'Done'
