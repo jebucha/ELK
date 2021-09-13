@@ -58,4 +58,3 @@ echo -e '60 second delay over'
 curl -XGET http://localhost:9200
 
 echo 'Done'
-~             
