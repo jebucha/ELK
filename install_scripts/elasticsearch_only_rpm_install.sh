@@ -19,6 +19,8 @@ path="/etc/elasticsearch/"
 filename="elasticsearch.yml"
 strClusterNameOrig='#cluster.name: my-application'
 strClusterNameNew='cluster.name: graylog'
+strNodeNameOrig='#node.name: node-1'
+strNodeNameNew='node.name: ${HOSTNAME}'
 strHostOrig='#network.host: 192.168.0.1'
 strHostNew='network.host: ["_local_","_site_"]'
 strPortOrig='#http.port: 9200'
@@ -28,6 +30,7 @@ echo "node.data: false" >> $path/$filename
 echo "node.ingest: false" >> $path/$filename
 sed -i "s|$strClusterNameOrig|$strClusterNameNew|g" $path/$filename
 sed -i "s|$strHostOrig|$strHostNew|g" $path/$filename
+sed -i "s|$strNodeNameOrig|$strNodeNameNew|g" $path/$filename
 sed -i "s|$strPortOrig|$strPortNew|g" $path/$filename
 
 # set the owner
@@ -49,3 +52,4 @@ echo -e '60 second delay over'
 curl -XGET http://localhost:9200
 
 echo 'Done'
+~             
