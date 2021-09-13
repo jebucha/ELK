@@ -28,7 +28,7 @@ strPortNew='http.port: 9200'
 strUnicastDiscoveryOrig='#discovery.zen.ping.unicast.hosts: ["host1", "host2"]'
 strUnicastDiscoveryNew='discovery.zen.ping.unicast.hosts: ["192.168.1.188", "192.168.1.148"]'
 strMinMasterOrig='#discovery.zen.minimum_master_nodes:'
-stringMinMasterNew='discovery.zen.minimum_master_nodes: 2'
+strMinMasterNew='discovery.zen.minimum_master_nodes: 2'
 echo "node.master: true" >> $path/$filename
 echo "node.data: false" >> $path/$filename
 echo "node.ingest: false" >> $path/$filename
