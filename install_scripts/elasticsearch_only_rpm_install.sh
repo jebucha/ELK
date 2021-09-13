@@ -25,11 +25,17 @@ strHostOrig='#network.host: 192.168.0.1'
 strHostNew='network.host: ["_local_","_site_"]'
 strPortOrig='#http.port: 9200'
 strPortNew='http.port: 9200'
+strUnicastDiscoveryOrig='#discovery.zen.ping.unicast.hosts: ["host1", "host2"]'
+strUnicastDiscoveryNew='discovery.zen.ping.unicast.hosts: ["192.168.1.188", "192.168.1.148"]'
+strMinMasterOrig='#discovery.zen.minimum_master_nodes:'
+stringMinMasterNew='discovery.zen.minimum_master_nodes: 2'
 echo "node.master: true" >> $path/$filename
 echo "node.data: false" >> $path/$filename
 echo "node.ingest: false" >> $path/$filename
 sed -i "s|$strClusterNameOrig|$strClusterNameNew|g" $path/$filename
 sed -i "s|$strHostOrig|$strHostNew|g" $path/$filename
+sed -i "s|$strUnicastDiscoveryOrig|$strUnicastDiscoveryNew|g" $path/$filename
+sed -i "s|$strMinMasterOrig|$strMinMasterNew|g" $path/$filename
 sed -i "s|$strNodeNameOrig|$strNodeNameNew|g" $path/$filename
 sed -i "s|$strPortOrig|$strPortNew|g" $path/$filename
 
